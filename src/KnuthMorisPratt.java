@@ -1,5 +1,5 @@
 
-public class KnutMorisPrat {
+public class KnuthMorisPratt {
 
 	static int []KMP_next = {-1,0,-1,1,-1,0,-1,1,-1,0,6};
 

@@ -1,5 +1,5 @@
 
-public class MorisPrath {
+public class MorisPratt {
 
 	static int []MP_next = {-1,0,1,2,0,1,2};
 
