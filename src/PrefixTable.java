@@ -1,8 +1,16 @@
 public class PrefixTable {
     public static void main(String[] args) {
-        String x = "TTAATTGTTAAATAA";//15 1 0 0 2 1 0 4 1 0 0 0 1 0 0
-        int m = x.length();
-       
+    	//15 1 0 0 2 1 0 4 1 0 0 0 1 0 0
+        String x = "TTAATTGTTAAATAA";
+        int m = x.length();        
+        int[]pref = calculateBorderTable(x,m);
+        
+        for(int i :pref)
+            System.out.print(i+"\t");
+    }
+
+	public static int[] calculateBorderTable(String x, int m) {
+
         int[]pref = new int[m];
        
         pref[0]=m;
@@ -26,8 +34,6 @@ public class PrefixTable {
                 pref[i]=g-i;
             }
         }
-       
-        for(int i :pref)
-            System.out.print(i+"\t");
-    }
+        return pref;
+	}
 }
