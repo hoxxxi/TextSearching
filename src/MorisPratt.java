@@ -5,9 +5,9 @@ public class MorisPratt {
 
 	public static void main(String[]args)
 	{
-		//0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5
-		//A A B A A A A B A B A A A B A A
-		//                    A A A B A A
+		//0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
+		//A A B A A A A B A B A A A B A A B B
+		//A A A B A A
 		String y = "aabaaaababaaabaabb";
 		int n = y.length();
 		
@@ -19,10 +19,11 @@ public class MorisPratt {
 	}
 	private static void calculateDachiStyle(String x, String y, int m, int n)
 	{
+		int k = 0;
 		for(int i = 0; i<=n-m;)
 		{
 			int period = 1;
-			for(int k = 0; k<m; k++)
+			for(; k<m; k++)
 			{
 				if(x.charAt(k) == y.charAt(i+k))
 				{
@@ -38,23 +39,10 @@ public class MorisPratt {
 					break;
 				}
 			}
+			k = MP_next[k];
+			if (k<0) k = 0;
 			i+=period;
 			System.out.println();
 		}
 	}
-	
-//	private static void calculate(String x, String y, int m, int n) {
-//	int i = 0;
-//	int j = 0;
-//	while(j<=n)
-//	{
-//		while(i == m || (i>=0 && x.charAt(i) != y.charAt(j))) {
-//			i=MP_next[i];
-//		}
-//		j++; i++;
-//
-//		if(i==m)
-//			System.out.println("x occurs in y at position "+(j-i));
-//	}
-//}
 }
