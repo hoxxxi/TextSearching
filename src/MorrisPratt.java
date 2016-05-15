@@ -18,6 +18,7 @@ public class MorrisPratt {
 	}
 	private static void calculateDachiStyle(String x, String y, int m, int n)
 	{
+//		MP_next = new BorderTable(x,m).BT;
 		int k = 0;
 		int i = 0;
 		while (i<=n-m)
